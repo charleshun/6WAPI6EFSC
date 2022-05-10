@@ -22,6 +22,17 @@ namespace _6webAPI6EF.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             _logger.LogInformation("Made call to weath Endpoint");
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Fatal error");
+                throw;
+            }
+            
+            
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
